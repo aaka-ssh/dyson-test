@@ -1,0 +1,10 @@
+longitude
+latitude
+housing_median_age
+total_rooms
+population
+households
+median_income
+bedrooms_per_room
+ocean_proximity_<1H OCEAN
+ocean_proximity_INLAND
