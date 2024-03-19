@@ -34,6 +34,7 @@ alpha: 0.001
 
 numerical_vars_with_na:
   - total_bedrooms
+  - bedrooms_per_room
 
 # variables for yeo-johnson transform
 numericals_yjt_vars:

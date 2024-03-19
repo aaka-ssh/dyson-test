@@ -20,7 +20,7 @@ def save_pipeline(*, pipeline_to_persist: Pipeline) -> None:
     saved models.
     """
 
-    # Prepare versioned save file name
+    # Prepare versioned file name for saving
     save_file_name = f"{config.app_config.pipeline_save_file}{_version}.pkl"
     save_path = TRAINED_MODEL_DIR / save_file_name
 
@@ -41,7 +41,7 @@ def remove_old_pipelines(*, files_to_keep: t.List[str]) -> None:
     Remove old model pipelines.
     To ensure there is a one-to-one mapping between
     the package version and the model version to be 
-    imported and used by..
+    imported and used by.
     """
     do_not_delete = files_to_keep + ["__init__.py"]
     for model_file in TRAINED_MODEL_DIR.iterdir():
