@@ -31,5 +31,4 @@ def make_prediction(
             "version": _version,
             "errors": errors,
         }
-
     return results

@@ -39,6 +39,7 @@ class ModelConfig(BaseModel):
     numerical_vars_with_na: List[str]
     numericals_yjt_vars: Sequence[str]
     categorical_vars: Sequence[str]
+    variables_to_rename: Dict
 
     
 class Config(BaseModel):

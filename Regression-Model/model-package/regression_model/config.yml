@@ -21,7 +21,7 @@ features:
   - households
   - median_income
   - bedrooms_per_room
-  - ocean_proximity_<1H OCEAN
+  - ocean_proximity_less_than_1H_OCEAN
   - ocean_proximity_INLAND
 
 # set train/test split
@@ -44,3 +44,8 @@ numericals_yjt_vars:
 
 categorical_vars:
   - ocean_proximity
+  
+variables_to_rename:
+  ocean_proximity_<1H OCEAN: ocean_proximity_less_than_1H_OCEAN
+  ocean_proximity_NEAR BAY: ocean_proximity_NEAR_BAY
+  ocean_proximity_NEAR OCEAN: ocean_proximity_NEAR_OCEAN
