@@ -25,6 +25,7 @@ def drop_na_inputs(*, input_data: pd.DataFrame) -> pd.DataFrame:
 def validate_inputs(*, input_data: pd.DataFrame) -> Tuple[pd.DataFrame, Optional[dict]]:
     """Check model inputs for unprocessable values."""
 
+    input_data.rename(columns=config.model_config.variables_to_rename, inplace=True)
     relevant_data = input_data[config.model_config.features].copy()
     validated_data = drop_na_inputs(input_data=relevant_data)
     errors = None
@@ -54,11 +55,11 @@ class CesDataInputSchema(BaseModel):
     total_rooms_per_person: Optional[float]
     bedrooms_per_room: Optional[float]
     income_per_person: Optional[float]
-    ocean_proximity_<1H OCEAN: Optional[int]
+    ocean_proximity_less_than_1H_OCEAN: Optional[int]
     ocean_proximity_INLAND: Optional[int]
     ocean_proximity_ISLAND: Optional[int]
-    ocean_proximity_NEAR BAY: Optional[int]
-    ocean_proximity_NEAR OCEAN: Optional[int]
+    ocean_proximity_NEAR_BAY: Optional[int]
+    ocean_proximity_NEAR_OCEAN: Optional[int]
 
 
 class MultipleCesDataInputs(BaseModel):
