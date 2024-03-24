@@ -1,10 +1,10 @@
 import math
-
 import warnings
 
 import numpy as np
 
 from regression_model.predict import make_prediction
+
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
 

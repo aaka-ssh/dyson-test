@@ -1,0 +1,51 @@
+# Package Overview
+package_name: regression_model
+
+# Data Files
+training_data_file: train.csv
+test_data_file: test.csv
+
+# Variables
+# The variable we are attempting to predict (median ces)
+target: median_ces
+
+pipeline_name: regression_model
+pipeline_save_file: regression_model_output_v
+
+features:
+  - longitude
+  - latitude
+  - housing_median_age
+  - total_rooms
+  - population
+  - households
+  - median_income
+  - bedrooms_per_room
+  - ocean_proximity_less_than_1H_OCEAN
+  - ocean_proximity_INLAND
+
+# set train/test split
+test_size: 0.2
+
+# to set the random seed
+random_state: 0
+
+alpha: 0.001
+
+numerical_vars_with_na:
+  - total_bedrooms
+  - bedrooms_per_room
+
+# variables for yeo-johnson transform
+numericals_yjt_vars:
+  - total_rooms
+  - population
+  - households
+
+categorical_vars:
+  - ocean_proximity
+  
+variables_to_rename:
+  ocean_proximity_<1H OCEAN: ocean_proximity_less_than_1H_OCEAN
+  ocean_proximity_NEAR BAY: ocean_proximity_NEAR_BAY
+  ocean_proximity_NEAR OCEAN: ocean_proximity_NEAR_OCEAN

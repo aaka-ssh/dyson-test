@@ -12,7 +12,7 @@ from regression_model.config.core import DATASET_DIR, TRAINED_MODEL_DIR, config
 def load_dataset(*, file_name: str) -> pd.DataFrame:
     dataframe = pd.read_csv(Path(f"{DATASET_DIR}/{file_name}"))
     transformed = dataframe.rename(columns=config.model_config.variables_to_rename)
-    return transformed    
+    return transformed
 
 
 def save_pipeline(*, pipeline_to_persist: Pipeline) -> None:
@@ -41,7 +41,7 @@ def remove_old_pipelines(*, files_to_keep: t.List[str]) -> None:
     """
     Remove old model pipelines.
     To ensure there is a one-to-one mapping between
-    the package version and the model version to be 
+    the package version and the model version to be
     imported and used by.
     """
     do_not_delete = files_to_keep + ["__init__.py"]
