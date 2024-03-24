@@ -32,6 +32,14 @@ jobs:
   test_my_app:
     <<: *defaults
     working_directory: ~/project/Regression-Model/ces-api
+    steps:
+      - checkout:
+          path: ~/project
+      - *prepare_tox
+      - run:
+          name: Runnning app tests
+          command: |
+            tox      
 
   deploy_app_to_railway:
     <<: *defaults
