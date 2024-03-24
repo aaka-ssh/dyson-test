@@ -6,9 +6,11 @@ from pathlib import Path
 from setuptools import find_packages, setup
 
 # Package meta-data.
-NAME = 'tid-regression-model'
-DESCRIPTION = "Example regression model package from Train In Data."
-AUTHOR = "AS"
+NAME = 'my-regression-model'
+DESCRIPTION = "regression model package"
+URL = "https://github.com/aaka-ssh/dyson-test"
+EMAIL = "learn.gcp.aakash@gmail.com"
+AUTHOR = "aaka"
 REQUIRES_PYTHON = ">=3.7.0"
 
 
@@ -36,7 +38,9 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     author=AUTHOR,
+    author_email=EMAIL,
     python_requires=REQUIRES_PYTHON,
+    url=URL,
     packages=find_packages(exclude=("tests",)),
     package_data={"regression_model": ["VERSION"]},
     install_requires=list_reqs(),
