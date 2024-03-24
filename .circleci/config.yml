@@ -27,37 +27,27 @@ fetch_data: &fetch_data
     name: Set script permissions and fetch data
     command: |
       source venv/bin/activate
-      # chmod +x ./scripts/fetch_kaggle_dataset.sh
-      # ./scripts/fetch_kaggle_dataset.sh
 
 jobs:
-#   section_07_test_app:
-#     <<: *defaults
-#     working_directory: ~/project/section-07-ci-and-publishing/house-prices-api
-#     steps:
-#       - checkout:
-#           path: ~/project
-#       - *prepare_tox
-#       - run:
-#           name: Runnning app tests
-#           command: |
-#             tox
+  test_my_app:
+    <<: *defaults
+    working_directory: ~/project/Regression-Model/ces-api
 
-#   section_07_deploy_app_to_railway:
-#     <<: *defaults
-#     steps:
-#       - checkout:
-#           path: ~/project/
-#       - node/install:
-#           node-version: '16.13'
-#       - run: node --version
-#       - run: npm i -g @railway/cli
-#       - run:
-#           name: Deploy to Railway App (You must set RAILWAY_TOKEN env var)
-#           command: |
-#             cd section-07-ci-and-publishing/house-prices-api && railway up --detach
+  deploy_app_to_railway:
+    <<: *defaults
+    steps:
+      - checkout:
+          path: ~/project/
+      - node/install:
+          node-version: '16.13'
+      - run: node --version
+      - run: npm i -g @railway/cli
+      - run:
+          name: Deploy to Railway App
+          command: |
+            cd Regression-Model/ces-api && railway up --detach
 
-  section_07_test_and_upload_regression_model:
+  test_and_upload_regression_model:
     <<: *defaults
     working_directory: ~/project/Regression-Model/model-package
     steps:
@@ -72,11 +62,10 @@ jobs:
           name: Test the model
           command: |
             tox
-      # - run:
-      #     name: Publish model to Gemfury
-      #     command: |
-      #       tox -e publish_model
-
+      - run:
+          name: Publish model to Gemfury
+          command: |
+            tox -e publish_model
 
 #   section_08_deploy_app_container_via_railway:
 #     <<: *defaults
@@ -151,28 +140,29 @@ jobs:
 #             pip install --user tox
 #             tox -e py38
 
-#   train_and_upload_regression_model:
-#     <<: *defaults
-#     steps:
-#       - checkout
-#       - *prepare_venv
-#       - run: 
-#           name: Install requirements
-#           command: |
-#             . venv/bin/activate
-#             pip install -r packages/regression_model/requirements.txt
-#       - *fetch_data
-#       - run: 
-#           name: Train model
-#           command: |
-#             . venv/bin/activate
-#             PYTHONPATH=./packages/regression_model python3 packages/regression_model/regression_model/train_pipeline.py
-#       - run: 
-#           name: Publish model to Gemfury
-#           command: |
-#             . venv/bin/activate
-#             chmod +x ./scripts/publish_model.sh
-#             ./scripts/publish_model.sh ./packages/regression_model/
+  train_and_upload_regression_model:
+    <<: *defaults
+    steps:
+      - checkout
+      - *prepare_venv
+      - run: 
+          name: Install requirements
+          command: |
+            . venv/bin/activate
+            pip install -r packages/regression_model/requirements.txt
+      - *fetch_data
+      - run: 
+          name: Train model
+          command: |
+            . venv/bin/activate
+            PYTHONPATH=./packages/regression_model python3 packages/regression_model/regression_model/train_pipeline.py
+      - run: 
+          name: Publish model to Gemfury
+          command: |
+            . venv/bin/activate
+            chmod +x ./scripts/publish_model.sh
+            ./scripts/publish_model.sh ./packages/regression_model/
+
 
 #   section_9_differential_tests:
 #     <<: *defaults
@@ -257,29 +247,29 @@ jobs:
 #             ./scripts/publish_model.sh ./packages/neural_network_model/
 
 
-# tags_only: &tags_only
-#   filters:
-#     branches:
-#       ignore: /.*/
-#     tags:
-#       only: /^.*/
+tags_only: &tags_only
+  filters:
+    branches:
+      ignore: /.*/
+    tags:
+      only: /^.*/
 
-# workflows:
-#   version: 2
-#   deploy_pipeline:
-#     jobs:
-#       - section_07_test_app
-#       - section_07_deploy_app_to_railway:
-#           requires:
-#             - section_07_test_app
-#           filters:
-#             branches:
-#               only:
-#                 - master
-#                 - demo
-#       # upload after git tags are created
-#       - section_07_test_and_upload_regression_model:
-#           <<: *tags_only
+workflows:
+  version: 2
+  deploy_pipeline:
+    jobs:
+      - test_my_app
+      - deploy_app_to_railway:
+          requires:
+            - test_my_app
+          filters:
+            branches:
+              only:
+                - master
+                - demo
+      # upload after git tags are created
+      - test_and_upload_regression_model:
+          <<: *tags_only
 
 #       - section_08_deploy_app_container_via_railway:
 #          filters:
