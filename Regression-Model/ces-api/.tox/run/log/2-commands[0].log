@@ -1,86 +1,30 @@
 name: run
 run_id: commands[0]
-env HOME: /home/jupyter
-env LANG: C.UTF-8
-env TMPDIR: /var/tmp
-env TERM: xterm-256color
-env LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/opt/conda/lib
-env PATH: /home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/bin:/usr/local/cuda/bin:/opt/conda/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
-env PYTHONHASHSEED: 1109942081
+env HOME: /home/learn_gcp_aakash9
+env LANG: en_US.UTF-8
+env TERM: screen
+env PATH: /home/learn_gcp_aakash9/dyson-test/Regression-Model/ces-api/.tox/test_app/bin:/opt/gradle/bin:/opt/maven/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/usr/local/rvm/bin:/google/go_appengine:/google/google_appengine:/google/migrate/anthos/:/home/learn_gcp_aakash9/.gems/bin:/home/learn_gcp_aakash9/gopath/bin:/google/gopath/bin:/google/flutter/bin:/usr/local/nvm/versions/node/v20.11.1/bin:/home/learn_gcp_aakash9/.local/bin
+env PYTHONHASHSEED: 102632095
 env PIP_DISABLE_PIP_VERSION_CHECK: 1
 env PYTHONIOENCODING: utf-8
 env PYTHONPATH: .
 env TOX_ENV_NAME: run
-env TOX_WORK_DIR: /home/jupyter/dyson-test/Regression-Model/ces-api/.tox
-env TOX_ENV_DIR: /home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app
-env VIRTUAL_ENV: /home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app
-env COLUMNS: 144
-env LINES: 32
-metadata pid: 5861
-cwd: /home/jupyter/dyson-test/Regression-Model/ces-api
-allow: /home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/bin/*
+env TOX_WORK_DIR: /home/learn_gcp_aakash9/dyson-test/Regression-Model/ces-api/.tox
+env TOX_ENV_DIR: /home/learn_gcp_aakash9/dyson-test/Regression-Model/ces-api/.tox/test_app
+env VIRTUAL_ENV: /home/learn_gcp_aakash9/dyson-test/Regression-Model/ces-api/.tox/test_app
+env COLUMNS: 172
+env LINES: 18
+metadata pid: 2298
+cwd: /home/learn_gcp_aakash9/dyson-test/Regression-Model/ces-api
+allow: /home/learn_gcp_aakash9/dyson-test/Regression-Model/ces-api/.tox/test_app/bin/*
 cmd: python app/main.py
-exit_code: -15
+exit_code: 1
 
 standard error:
-[32m2024-03-23 15:10:24.351[0m | [33m[1mWARNING [0m | [36m__main__[0m:[36m<module>[0m:[36m54[0m - [33m[1mCurrently in development mode.[0m
-[32mINFO[0m:     Started server process [[36m5861[0m]
+[32m2024-03-24 08:19:30.456[0m | [33m[1mWARNING [0m | [36m__main__[0m:[36m<module>[0m:[36m54[0m - [33m[1mCurrently in development mode.[0m
+[32mINFO[0m:     Started server process [[36m2298[0m]
 [32mINFO[0m:     Waiting for application startup.
 [32mINFO[0m:     Application startup complete.
-[32mINFO[0m:     Uvicorn running on [1mhttp://localhost:8001[0m (Press CTRL+C to quit)
-[32mINFO[0m:     Shutting down
-[32mINFO[0m:     Finished server process [[36m5861[0m]
-[31mERROR[0m:    Traceback (most recent call last):
-  File "/opt/conda/lib/python3.10/asyncio/runners.py", line 44, in run
-    return loop.run_until_complete(main)
-  File "/opt/conda/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
-    self.run_forever()
-  File "/opt/conda/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
-    self._run_once()
-  File "/opt/conda/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
-    handle._run()
-  File "/opt/conda/lib/python3.10/asyncio/events.py", line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File "/home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/lib/python3.10/site-packages/uvicorn/server.py", line 68, in serve
-    with self.capture_signals():
-  File "/opt/conda/lib/python3.10/contextlib.py", line 142, in __exit__
-    next(self.gen)
-  File "/home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/lib/python3.10/site-packages/uvicorn/server.py", line 328, in capture_signals
-    signal.raise_signal(captured_signal)
-KeyboardInterrupt
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/lib/python3.10/site-packages/starlette/routing.py", line 743, in lifespan
-    await receive()
-  File "/home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/lib/python3.10/site-packages/uvicorn/lifespan/on.py", line 137, in receive
-    return await self.receive_queue.get()
-  File "/opt/conda/lib/python3.10/asyncio/queues.py", line 159, in get
-    await getter
-asyncio.exceptions.CancelledError
-
-Traceback (most recent call last):
-  File "/home/jupyter/dyson-test/Regression-Model/ces-api/app/main.py", line 57, in <module>
-    uvicorn.run(app, host="localhost", port=8001, log_level="debug")
-  File "/home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/lib/python3.10/site-packages/uvicorn/main.py", line 575, in run
-    server.run()
-  File "/home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/lib/python3.10/site-packages/uvicorn/server.py", line 65, in run
-    return asyncio.run(self.serve(sockets=sockets))
-  File "/opt/conda/lib/python3.10/asyncio/runners.py", line 44, in run
-    return loop.run_until_complete(main)
-  File "/opt/conda/lib/python3.10/asyncio/base_events.py", line 636, in run_until_complete
-    self.run_forever()
-  File "/opt/conda/lib/python3.10/asyncio/base_events.py", line 603, in run_forever
-    self._run_once()
-  File "/opt/conda/lib/python3.10/asyncio/base_events.py", line 1909, in _run_once
-    handle._run()
-  File "/opt/conda/lib/python3.10/asyncio/events.py", line 80, in _run
-    self._context.run(self._callback, *self._args)
-  File "/home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/lib/python3.10/site-packages/uvicorn/server.py", line 68, in serve
-    with self.capture_signals():
-  File "/opt/conda/lib/python3.10/contextlib.py", line 142, in __exit__
-    next(self.gen)
-  File "/home/jupyter/dyson-test/Regression-Model/ces-api/.tox/test_app/lib/python3.10/site-packages/uvicorn/server.py", line 328, in capture_signals
-    signal.raise_signal(captured_signal)
-KeyboardInterrupt
+[31mERROR[0m:    [Errno 99] error while attempting to bind on address ('::1', 8001, 0, 0): cannot assign requested address
+[32mINFO[0m:     Waiting for application shutdown.
+[32mINFO[0m:     Application shutdown complete.

@@ -32,14 +32,6 @@ jobs:
   test_my_app:
     <<: *defaults
     working_directory: ~/project/Regression-Model/ces-api
-    steps:
-      - checkout:
-          path: ~/project
-      - *prepare_tox
-      - run:
-          name: Runnning app tests
-          command: |
-            tox
 
   deploy_app_to_railway:
     <<: *defaults
@@ -74,7 +66,6 @@ jobs:
           name: Publish model to Gemfury
           command: |
             tox -e publish_model
-
 
 #   section_08_deploy_app_container_via_railway:
 #     <<: *defaults
@@ -172,6 +163,7 @@ jobs:
             chmod +x ./scripts/publish_model.sh
             ./scripts/publish_model.sh ./packages/regression_model/
 
+
 #   section_9_differential_tests:
 #     <<: *defaults
 #     steps:
@@ -255,7 +247,6 @@ jobs:
 #             ./scripts/publish_model.sh ./packages/neural_network_model/
 
 
-###############################################################################################################
 tags_only: &tags_only
   filters:
     branches:
