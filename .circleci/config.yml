@@ -45,7 +45,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout:
-          path: ~/project/
+          path: ~/project/Regression-Model/ces-api
       - node/install:
           node-version: '16.13'
       - run: node --version
