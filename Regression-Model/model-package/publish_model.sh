@@ -3,13 +3,13 @@
 # Building packages and uploading them to a Gemfury repository
 
 GEMFURY_URL=$GEMFURY_PUSH_URL
-
+echo "1"
 set +x
-
+echo "2"
 DIRS="$@"
 BASE_DIR=$(pwd)
 SETUP="setup.py"
-
+echo "3"
 warn() {
     echo "$@" 1>&2
 }
