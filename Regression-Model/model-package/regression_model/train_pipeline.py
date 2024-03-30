@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 
 
 def run_training() -> None:
+    try:
     """Train the model."""
 
     # read training data
@@ -27,6 +28,8 @@ def run_training() -> None:
 
     # persist trained model
     save_pipeline(pipeline_to_persist=ces_pipe)
+    except Exception as e:
+    print("An error occurred during training:", str(e))
 
 
 if __name__ == "__main__":
