@@ -4,7 +4,7 @@
 
 GEMFURY_URL=$GEMFURY_PUSH_URL
 
-set -e
+set +x
 
 DIRS="$@"
 BASE_DIR=$(pwd)
