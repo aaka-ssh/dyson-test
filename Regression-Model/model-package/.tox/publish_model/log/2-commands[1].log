@@ -1,0 +1,176 @@
+name: publish_model
+run_id: commands[1]
+env GEMFURY_PUSH_URL: https://keiSSUskpscYsX2nrYrz:@pypi.fury.io/aaka/
+env HOME: /home/jupyter
+env LANG: C.UTF-8
+env TMPDIR: /var/tmp
+env TERM: xterm-256color
+env LD_LIBRARY_PATH: /usr/local/cuda/lib64:/usr/local/nccl2/lib:/usr/local/cuda/extras/CUPTI/lib64:/opt/conda/lib
+env PATH: /home/jupyter/dyson-test/Regression-Model/model-package/.tox/test_package/bin:/usr/local/cuda/bin:/opt/conda/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+env PYTHONHASHSEED: 146135893
+env PIP_DISABLE_PIP_VERSION_CHECK: 1
+env PYTHONIOENCODING: utf-8
+env PYTHONPATH: .
+env TOX_ENV_NAME: publish_model
+env TOX_WORK_DIR: /home/jupyter/dyson-test/Regression-Model/model-package/.tox
+env TOX_ENV_DIR: /home/jupyter/dyson-test/Regression-Model/model-package/.tox/test_package
+env VIRTUAL_ENV: /home/jupyter/dyson-test/Regression-Model/model-package/.tox/test_package
+env COLUMNS: 144
+env LINES: 32
+metadata pid: 14635
+cwd: /home/jupyter/dyson-test/Regression-Model/model-package
+allow: *
+cmd: ./publish_model.sh .
+exit_code: 0
+1
+2
+3
+Checking directory .
+Package my-regression-model-1.0.0
+running sdist
+running egg_info
+writing my_regression_model.egg-info/PKG-INFO
+writing dependency_links to my_regression_model.egg-info/dependency_links.txt
+writing requirements to my_regression_model.egg-info/requires.txt
+writing top-level names to my_regression_model.egg-info/top_level.txt
+reading manifest file 'my_regression_model.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+writing manifest file 'my_regression_model.egg-info/SOURCES.txt'
+running check
+creating my-regression-model-1.0.0
+creating my-regression-model-1.0.0/requirements
+creating my-regression-model-1.0.0/my_regression_model.egg-info
+creating my-regression-model-1.0.0/my_regression_model.egg-info/.ipynb_checkpoints
+creating my-regression-model-1.0.0/regression_model
+creating my-regression-model-1.0.0/regression_model/config
+creating my-regression-model-1.0.0/regression_model/datasets
+creating my-regression-model-1.0.0/regression_model/processing
+creating my-regression-model-1.0.0/regression_model/trained_models
+creating my-regression-model-1.0.0/tests
+copying files to my-regression-model-1.0.0...
+copying MANIFEST.in -> my-regression-model-1.0.0
+copying pyproject.toml -> my-regression-model-1.0.0
+copying setup.py -> my-regression-model-1.0.0
+copying ./requirements/requirements.txt -> my-regression-model-1.0.0/./requirements
+copying ./requirements/test_requirements.txt -> my-regression-model-1.0.0/./requirements
+copying my_regression_model.egg-info/PKG-INFO -> my-regression-model-1.0.0/my_regression_model.egg-info
+copying my_regression_model.egg-info/SOURCES.txt -> my-regression-model-1.0.0/my_regression_model.egg-info
+copying my_regression_model.egg-info/dependency_links.txt -> my-regression-model-1.0.0/my_regression_model.egg-info
+copying my_regression_model.egg-info/requires.txt -> my-regression-model-1.0.0/my_regression_model.egg-info
+copying my_regression_model.egg-info/top_level.txt -> my-regression-model-1.0.0/my_regression_model.egg-info
+copying my_regression_model.egg-info/.ipynb_checkpoints/PKG-INFO-checkpoint -> my-regression-model-1.0.0/my_regression_model.egg-info/.ipynb_checkpoints
+copying regression_model/VERSION -> my-regression-model-1.0.0/regression_model
+copying regression_model/__init__.py -> my-regression-model-1.0.0/regression_model
+copying regression_model/config.yml -> my-regression-model-1.0.0/regression_model
+copying regression_model/pipeline.py -> my-regression-model-1.0.0/regression_model
+copying regression_model/predict.py -> my-regression-model-1.0.0/regression_model
+copying regression_model/train_pipeline.py -> my-regression-model-1.0.0/regression_model
+copying regression_model/config/__init__.py -> my-regression-model-1.0.0/regression_model/config
+copying regression_model/config/core.py -> my-regression-model-1.0.0/regression_model/config
+copying regression_model/datasets/__init__.py -> my-regression-model-1.0.0/regression_model/datasets
+copying regression_model/datasets/test.csv -> my-regression-model-1.0.0/regression_model/datasets
+copying regression_model/datasets/train.csv -> my-regression-model-1.0.0/regression_model/datasets
+copying regression_model/processing/__init__.py -> my-regression-model-1.0.0/regression_model/processing
+copying regression_model/processing/data_manager.py -> my-regression-model-1.0.0/regression_model/processing
+copying regression_model/processing/validation.py -> my-regression-model-1.0.0/regression_model/processing
+copying regression_model/trained_models/__init__.py -> my-regression-model-1.0.0/regression_model/trained_models
+copying regression_model/trained_models/regression_model_output_v1.0.0.pkl -> my-regression-model-1.0.0/regression_model/trained_models
+copying tests/test_prediction.py -> my-regression-model-1.0.0/tests
+copying my_regression_model.egg-info/SOURCES.txt -> my-regression-model-1.0.0/my_regression_model.egg-info
+Writing my-regression-model-1.0.0/setup.cfg
+Creating tar archive
+removing 'my-regression-model-1.0.0' (and everything under it)
+running bdist_wheel
+running build
+running build_py
+copying regression_model/train_pipeline.py -> build/lib/regression_model
+copying regression_model/predict.py -> build/lib/regression_model
+copying regression_model/pipeline.py -> build/lib/regression_model
+copying regression_model/processing/validation.py -> build/lib/regression_model/processing
+copying regression_model/processing/data_manager.py -> build/lib/regression_model/processing
+copying regression_model/config/core.py -> build/lib/regression_model/config
+copying regression_model/VERSION -> build/lib/regression_model
+copying regression_model/config.yml -> build/lib/regression_model
+copying regression_model/trained_models/regression_model_output_v1.0.0.pkl -> build/lib/regression_model/trained_models
+copying regression_model/datasets/test.csv -> build/lib/regression_model/datasets
+copying regression_model/datasets/train.csv -> build/lib/regression_model/datasets
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/regression_model
+copying build/lib/regression_model/train_pipeline.py -> build/bdist.linux-x86_64/wheel/regression_model
+copying build/lib/regression_model/VERSION -> build/bdist.linux-x86_64/wheel/regression_model
+copying build/lib/regression_model/predict.py -> build/bdist.linux-x86_64/wheel/regression_model
+creating build/bdist.linux-x86_64/wheel/regression_model/processing
+copying build/lib/regression_model/processing/validation.py -> build/bdist.linux-x86_64/wheel/regression_model/processing
+copying build/lib/regression_model/processing/__init__.py -> build/bdist.linux-x86_64/wheel/regression_model/processing
+copying build/lib/regression_model/processing/data_manager.py -> build/bdist.linux-x86_64/wheel/regression_model/processing
+copying build/lib/regression_model/__init__.py -> build/bdist.linux-x86_64/wheel/regression_model
+creating build/bdist.linux-x86_64/wheel/regression_model/trained_models
+copying build/lib/regression_model/trained_models/__init__.py -> build/bdist.linux-x86_64/wheel/regression_model/trained_models
+copying build/lib/regression_model/trained_models/regression_model_output_v1.0.0.pkl -> build/bdist.linux-x86_64/wheel/regression_model/trained_models
+copying build/lib/regression_model/pipeline.py -> build/bdist.linux-x86_64/wheel/regression_model
+copying build/lib/regression_model/config.yml -> build/bdist.linux-x86_64/wheel/regression_model
+creating build/bdist.linux-x86_64/wheel/regression_model/datasets
+copying build/lib/regression_model/datasets/__init__.py -> build/bdist.linux-x86_64/wheel/regression_model/datasets
+copying build/lib/regression_model/datasets/test.csv -> build/bdist.linux-x86_64/wheel/regression_model/datasets
+copying build/lib/regression_model/datasets/train.csv -> build/bdist.linux-x86_64/wheel/regression_model/datasets
+creating build/bdist.linux-x86_64/wheel/regression_model/config
+copying build/lib/regression_model/config/__init__.py -> build/bdist.linux-x86_64/wheel/regression_model/config
+copying build/lib/regression_model/config/core.py -> build/bdist.linux-x86_64/wheel/regression_model/config
+running install_egg_info
+Copying my_regression_model.egg-info to build/bdist.linux-x86_64/wheel/my_regression_model-1.0.0-py3.10.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/my_regression_model-1.0.0.dist-info/WHEEL
+creating 'dist/my_regression_model-1.0.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'my_regression_model-1.0.0.dist-info/.ipynb_checkpoints/PKG-INFO-checkpoint'
+adding 'regression_model/VERSION'
+adding 'regression_model/__init__.py'
+adding 'regression_model/config.yml'
+adding 'regression_model/pipeline.py'
+adding 'regression_model/predict.py'
+adding 'regression_model/train_pipeline.py'
+adding 'regression_model/config/__init__.py'
+adding 'regression_model/config/core.py'
+adding 'regression_model/datasets/__init__.py'
+adding 'regression_model/datasets/test.csv'
+adding 'regression_model/datasets/train.csv'
+adding 'regression_model/processing/__init__.py'
+adding 'regression_model/processing/data_manager.py'
+adding 'regression_model/processing/validation.py'
+adding 'regression_model/trained_models/__init__.py'
+adding 'regression_model/trained_models/regression_model_output_v1.0.0.pkl'
+adding 'my_regression_model-1.0.0.dist-info/METADATA'
+adding 'my_regression_model-1.0.0.dist-info/WHEEL'
+adding 'my_regression_model-1.0.0.dist-info/top_level.txt'
+adding 'my_regression_model-1.0.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+my-regression-model-1.0.0.tar.gz ... okmy_regression_model-1.0.0-py3-none-any.whl ... ok
+standard error:
+warning: no files found matching '*.txt'
+warning: no files found matching '*.md'
+warning: no files found matching '*.pkl'
+warning: manifest_maker: MANIFEST.in, line 4: 'recursive-include' expects <dir> <pattern1> <pattern2> ...
+
+warning: no previously-included files found matching '*.log'
+warning: no previously-included files found matching '*.cfg'
+warning: no previously-included files matching '__pycache__' found under directory '*'
+warning: no previously-included files matching '*.py[co]' found under directory '*'
+warning: sdist: standard file not found: should have one of README, README.rst, README.txt, README.md
+
+/home/jupyter/dyson-test/Regression-Model/model-package/.tox/test_package/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+!!
+
+        ********************************************************************************
+        Please avoid running ``setup.py`` directly.
+        Instead, use pypa/build, pypa/installer or other
+        standards-based tools.
+
+        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+        ********************************************************************************
+
+!!
+  self.initialize_options()
+curl: /opt/conda/lib/libcurl.so.4: no version information available (required by curl)
+curl: /opt/conda/lib/libcurl.so.4: no version information available (required by curl)

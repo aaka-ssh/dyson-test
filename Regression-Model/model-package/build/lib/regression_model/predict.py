@@ -23,9 +23,7 @@ def make_prediction(
     results = {"predictions": None, "version": _version, "errors": errors}
 
     if not errors:
-        predictions = _ces_pipe.predict(
-            X=validated_data[config.model_config.features]
-        )
+        predictions = _ces_pipe.predict(X=validated_data[config.model_config.features])
         results = {
             "predictions": [np.exp(pred) for pred in predictions],  # type: ignore
             "version": _version,

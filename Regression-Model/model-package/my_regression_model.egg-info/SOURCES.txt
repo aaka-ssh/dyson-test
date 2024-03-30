@@ -8,6 +8,7 @@ my_regression_model.egg-info/SOURCES.txt
 my_regression_model.egg-info/dependency_links.txt
 my_regression_model.egg-info/requires.txt
 my_regression_model.egg-info/top_level.txt
+my_regression_model.egg-info/.ipynb_checkpoints/PKG-INFO-checkpoint
 regression_model/VERSION
 regression_model/__init__.py
 regression_model/config.yml

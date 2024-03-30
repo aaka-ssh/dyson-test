@@ -41,7 +41,7 @@ class ModelConfig(BaseModel):
     categorical_vars: Sequence[str]
     variables_to_rename: Dict
 
-    
+
 class Config(BaseModel):
     """Master config object."""
 
