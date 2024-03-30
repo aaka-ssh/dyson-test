@@ -164,6 +164,13 @@ jobs:
           command: |
             . venv/bin/activate
             PYTHONPATH=./packages/regression_model python3 packages/regression_model/regression_model/train_pipeline.py
+      - run:
+          name: Verify file path
+          command: |
+            ls -l ./packages/Regression-Model/model-package/publish_model.sh
+            pwd
+            echo "File path: ./packages/Regression-Model/model-package/publish_model.sh"
+
       - run: 
           name: Publish model to Gemfury
           command: |
