@@ -273,7 +273,7 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
                 - demo
       # upload after git tags are created
       - test_and_upload_regression_model:
@@ -285,7 +285,7 @@ workflows:
 #              only:
 #                - master
 #                - demo
-######################################################################################################
+##############################################################################################################
 #  test-all:
 #    jobs:
 #      - test_regression_model_py36
