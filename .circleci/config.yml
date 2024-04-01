@@ -55,7 +55,7 @@ jobs:
       - run:
           name: Deploy to Railway App
           command: |
-            cd ~/project/Regression-Model/ces-api/ && railway up --detach --service dysfunctional-laugh
+            cd ~/project/Regression-Model/ces-api && railway up --detach --service dysfunctional-laugh
 
   test_and_upload_regression_model:
     <<: *defaults
