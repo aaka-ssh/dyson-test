@@ -41,22 +41,22 @@ jobs:
           command: |
             tox      
 
-  deploy_app_to_railway:
-    <<: *defaults
-    steps:
-      - checkout:
-          path: ~/project/
-      - node/install:
-          node-version: '16.13'
-      - run: node --version
-      - run: npm i -g @railway/cli
-      - run: railway --version
-      #- run: railway link 2ff60adb-b444-429b-86b5-de31d20f1c76 dysfunctional-laugh
-      #- run: railway service dysfunctional-laugh
-      - run:
-          name: Deploy to Railway App
-          command: |
-            cd Regression-Model/ces-api && railway up --detach --service dysfunctional-laugh
+  # deploy_app_to_railway:
+  #   <<: *defaults
+  #   steps:
+  #     - checkout:
+  #         path: ~/project/
+  #     - node/install:
+  #         node-version: '16.13'
+  #     - run: node --version
+  #     - run: npm i -g @railway/cli
+  #     - run: railway --version
+  #     #- run: railway link 2ff60adb-b444-429b-86b5-de31d20f1c76 dysfunctional-laugh
+  #     #- run: railway service dysfunctional-laugh
+  #     - run:
+  #         name: Deploy to Railway App
+  #         command: |
+  #           cd Regression-Model/ces-api && railway up --detach --service dysfunctional-laugh
 
   test_and_upload_regression_model:
     <<: *defaults
@@ -78,22 +78,22 @@ jobs:
           command: |
             tox -e publish_model
 
-#   section_08_deploy_app_container_via_railway:
-#     <<: *defaults
-#     steps:
-#       - setup_remote_docker:
-#           # Supported versions: https://circleci.com/docs/2.0/building-docker-images/#docker-version
-#           version: 20.10.18
-#       - checkout:
-#           path: ~/project/
-#       - node/install:
-#           node-version: '16.13'
-#       - run: node --version
-#       - run: npm i -g @railway/cli
-#       - run:
-#           name: Build and run Dockerfile (see https://docs.railway.app/deploy/dockerfiles)
-#           command: |
-#             cd section-08-deploying-with-containers && railway up --detach
+  deploy_app_container_via_railway:
+    <<: *defaults
+    steps:
+      - setup_remote_docker:
+          # Supported versions: https://circleci.com/docs/2.0/building-docker-images/#docker-version
+          version: 20.10.18
+      - checkout:
+          path: ~/project/
+      - node/install:
+          node-version: '16.13'
+      - run: node --version
+      - run: npm i -g @railway/cli
+      - run:
+          name: Build and run Dockerfile (see https://docs.railway.app/deploy/dockerfiles)
+          command: |
+            cd Regression-Model && railway up --detach --service dysfunctional-laugh
 
   train_and_upload_regression_model:
     <<: *defaults
@@ -130,7 +130,7 @@ workflows:
   deploy_pipeline:
     jobs:
       - test_my_app
-      - deploy_app_to_railway:
+      - deploy_app_container_via_railway:
           requires:
             - test_my_app
           filters:
@@ -142,11 +142,11 @@ workflows:
       - test_and_upload_regression_model:
           <<: *tags_only
 
-#       - section_08_deploy_app_container_via_railway:
-#          filters:
-#            branches:
-#              only:
-#                - master
-#                - demo
+      # - deploy_app_container_via_railway:
+      #    filters:
+      #      branches:
+      #        only:
+      #          - main
+      #          - demo
 
 
