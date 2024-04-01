@@ -142,11 +142,3 @@ workflows:
       - test_and_upload_regression_model:
           <<: *tags_only
 
-      # - deploy_app_container_via_railway:
-      #    filters:
-      #      branches:
-      #        only:
-      #          - main
-      #          - demo
-
-
