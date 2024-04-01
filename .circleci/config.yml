@@ -51,8 +51,8 @@ jobs:
       - run: node --version
       - run: npm i -g @railway/cli
       - run: railway --version
-      - run: railway link 2ff60adb-b444-429b-86b5-de31d20f1c76
-      - run: railway service dysfunctional-laugh
+      - run: railway link 2ff60adb-b444-429b-86b5-de31d20f1c76 service dysfunctional-laugh
+      #- run: railway service dysfunctional-laugh
       - run:
           name: Deploy to Railway App
           command: |
