@@ -55,7 +55,7 @@ jobs:
       - run:
           name: Deploy to Railway App
           command: |
-            cd ~/project/Regression-Model/ces-api/ && railway up --detach|--service dysfunctional-laugh|--environment production
+            cd ~/project/Regression-Model/ces-api/ && railway up --detach -- --project-token $RAILWAY_TOKEN
 
   test_and_upload_regression_model:
     <<: *defaults
