@@ -45,15 +45,16 @@ jobs:
     <<: *defaults
     steps:
       - checkout:
-          path: ~/project/Regression-Model/ces-api
+          path: ~/project/Regression-Model/ces-api/
       - node/install:
           node-version: '16.13'
       - run: node --version
       - run: npm i -g @railway/cli
+      - run: railway --version
       - run:
           name: Deploy to Railway App
           command: |
-            cd ~/project/Regression-Model/ces-api && railway up --detach
+            cd ~/project/Regression-Model/ces-api/ && railway up --detach
 
   test_and_upload_regression_model:
     <<: *defaults
